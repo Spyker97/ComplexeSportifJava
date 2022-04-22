@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="508.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.GUI.TableProduitController">
+   <children>
+      <TableView layoutX="145.0" layoutY="48.0" prefHeight="232.0" prefWidth="658.0">
+         <columns>
+            <TableColumn fx:id="nomuser" prefWidth="137.0" text="Nom user" />
+            <TableColumn fx:id="Nomproduit" minWidth="3.0" prefWidth="133.0" text="Nom produit" />
+            <TableColumn fx:id="DateCommande" prefWidth="134.0" text="Date" />
+            <TableColumn fx:id="AdresseCommande" minWidth="0.0" prefWidth="111.0" text="Adresse" />
+            <TableColumn fx:id="Modepayement" prefWidth="144.0" text="Mode payement" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnAjouter" layoutX="145.0" layoutY="350.0" mnemonicParsing="false" text="AjouterCommande" />
+   </children>
+</AnchorPane>

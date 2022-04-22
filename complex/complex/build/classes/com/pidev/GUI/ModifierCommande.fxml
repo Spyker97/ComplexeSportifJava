@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="IdUser" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pidev.GUI.ModifierCommandeController">
+   <children>
+      <Label layoutX="93.0" layoutY="62.0" prefHeight="21.0" prefWidth="155.0" text="nom user" />
+      <TextField fx:id="IdUser" layoutX="231.0" layoutY="57.0" />
+      <Label layoutX="93.0" layoutY="119.0" prefHeight="21.0" prefWidth="105.0" text="nom produit" />
+      <TextField fx:id="IdProduit" layoutX="231.0" layoutY="114.0" />
+      <Label layoutX="93.0" layoutY="179.0" prefHeight="21.0" prefWidth="85.0" text="date" />
+      <TextField fx:id="Date" layoutX="231.0" layoutY="174.0" />
+      <TextField fx:id="Adresse" layoutX="231.0" layoutY="229.0" />
+      <TextField fx:id="Payment" layoutX="231.0" layoutY="287.0" />
+      <Label layoutX="93.0" layoutY="234.0" prefHeight="21.0" prefWidth="65.0" text="adresse" />
+      <Label layoutX="90.0" layoutY="292.0" prefHeight="21.0" prefWidth="126.0" text="mode payment" />
+      <Button fx:id="btnModifier" layoutX="268.0" layoutY="342.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="119.0" text="Modifier" />
+   </children>
+</AnchorPane>
