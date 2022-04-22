@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifUserController">
+   <children>
+      <AnchorPane prefHeight="519.0" prefWidth="261.0" style="-fx-background-color: #FED700;">
+         <children>
+            <ImageView fitHeight="204.0" fitWidth="200.0" layoutX="35.0" layoutY="170.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/complexesportif.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="558.0">
+         <children>
+            <Label layoutX="174.0" layoutY="81.0" text="Nom" />
+            <Label layoutX="167.0" layoutY="141.0" text="Prenom" />
+            <TextField fx:id="ModifertextNom" layoutX="264.0" layoutY="77.0" promptText="Nom..." />
+            <TextField fx:id="ModifertextPrenom" layoutX="264.0" layoutY="137.0" promptText="Prenom..." />
+            <TextField fx:id="Modiferemail" layoutX="264.0" layoutY="301.0" promptText="Email..." />
+            <TextField fx:id="Modiferadresse" layoutX="264.0" layoutY="415.0" promptText="Adresse..." />
+            <TextField fx:id="ModifertextCin" layoutX="264.0" layoutY="22.0" promptText="Cin..." />
+            <Button fx:id="button_Modifer" layoutX="91.0" layoutY="469.0" mnemonicParsing="false" onAction="#ModiferClient" opacity="0.74" prefHeight="36.0" prefWidth="276.0" style="-fx-background-color: #FED700;" text="Sign Up">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="19.0" />
+               </font>
+            </Button>
+            <Label layoutX="167.0" layoutY="26.0" text="Cin" />
+            <Label layoutX="155.0" layoutY="203.0" text="Genre" />
+            <Label layoutX="157.0" layoutY="305.0" text="Email" />
+            <PasswordField fx:id="Modiferpassword" layoutX="264.0" layoutY="360.0" promptText="Password..." />
+            <Label layoutX="147.0" layoutY="364.0" text="Password" />
+            <Label layoutX="155.0" layoutY="419.0" text="Adresse" />
+            <Label layoutX="124.0" layoutY="265.0" text="Date de naissance" />
+            <RadioButton fx:id="Modiferg1" layoutX="264.0" layoutY="202.0" mnemonicParsing="false" selected="true" text="Homme">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="gn" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="Modiferg2" layoutX="359.0" layoutY="202.0" mnemonicParsing="false" text="Femme" toggleGroup="$gn">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <DatePicker fx:id="dateNaiss" layoutX="252.0" layoutY="261.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
