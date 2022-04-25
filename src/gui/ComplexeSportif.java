@@ -5,6 +5,7 @@
  */
 package gui;
 
+import complexesportifJava.entities.Mail;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,13 +29,20 @@ public class ComplexeSportif extends Application {
     @Override
     public void start(Stage primaryStage)  {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("logiin.fxml"));
             Scene scene = new Scene(root);
             
             primaryStage.setTitle("Ajouter personne!");
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.UTILITY);
             primaryStage.show();
+//            Mail.send(
+//    "ahmedbhd1997@gmail.com",
+//    "Sej+^e3hzB@7cd(saddi",
+//    "ahmedbhd97@gmail.com",
+//    "Bienvenu sur WayToLearnX",
+//    "sdsd"
+//  );
         } catch (IOException ex) {
             Logger.getLogger(ex.getMessage());
         }

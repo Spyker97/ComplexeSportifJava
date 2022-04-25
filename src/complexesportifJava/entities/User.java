@@ -13,6 +13,14 @@ import java.util.Date;
  */
 public class User {
     private int id,cin;
+    private int  RememberMe=0;
+    public int getRememberMe() {
+        return RememberMe;
+    }
+
+    public void setRememberMe(int RememberMe) {
+        this.RememberMe = RememberMe;
+    }
     private String username, prenom, genre,email,password,adresse, date_naissance;
    
 
@@ -31,6 +39,12 @@ public class User {
         this.adresse = adresse;
         this.date_naissance = date_naissance;
     }
+    public User(int id, int cin, String username) {
+        this.id = id;
+        this.cin = cin;
+        this.username = username;
+     
+    }
 
     public User(int cin, String username, String prenom, String genre, String email, String password, String adresse, String date_naissance) {
         this.cin = cin;
@@ -43,9 +57,21 @@ public class User {
         this.date_naissance = date_naissance;
     }
 
+     public User(int cin, String username, String prenom, String email, String password, String adresse) {
+        this.cin = cin;
+        this.username = username;
+        this.prenom = prenom;
+        
+        this.email = email;
+        this.password = password;
+        this.adresse = adresse;
+        
+    }
     public User(String text, String text0) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 
     
 
@@ -130,8 +156,4 @@ public class User {
         return "User{" + "id=" + id + ", cin=" + cin + ", username=" + username + ", prenom=" + prenom + ", genre=" + genre + ", email=" + email + ", password=" + password + ", adresse=" + adresse + ", date_naissance=" + date_naissance + '}';
     }
 
-   
-    
-    
-    
 }

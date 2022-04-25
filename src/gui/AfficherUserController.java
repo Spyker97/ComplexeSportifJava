@@ -5,6 +5,7 @@
  */
 package gui;
 
+import ComplexesportifJava.tools.MaConnexion;
 import complexesportifJava.entities.User;
 import complexesportifJava.services.UserService;
 import java.io.IOException;
@@ -13,6 +14,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +26,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -53,7 +57,13 @@ public class AfficherUserController implements Initializable {
     Button bt = new Button("Supprimer");
         @FXML
         private TableColumn<User, String> CAction;
+    @FXML
+    private TextField filterField;
 
+    ObservableList<User> listM;
+    ObservableList<User> dataList;
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -75,7 +85,7 @@ public class AfficherUserController implements Initializable {
       
       private void loadDate() {
         CCin.setCellValueFactory(new PropertyValueFactory<>("cin"));
-        CNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        CNom.setCellValueFactory(new PropertyValueFactory<>("username"));
         CPrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         CDateNaiss.setCellValueFactory(new PropertyValueFactory<>("date_naissance"));
         CGenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
@@ -90,9 +100,6 @@ public class AfficherUserController implements Initializable {
     @FXML
     private void Delete(ActionEvent event) {
          UserService us = new UserService();
-         
-         
-          
             User a = tableUser.getSelectionModel().getSelectedItem();
             us.supprimer(a.getCin());
             loadDate();
@@ -106,5 +113,33 @@ public class AfficherUserController implements Initializable {
                  stage.setScene(scene);
                  stage.show();
     }
+    
+//    void search_user() {          
+//        CCin.setCellValueFactory(new PropertyValueFactory<>("cin"));
+//        CNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+//        
+//        
+//     
+//        
+//        dataList = MaConnexion.getInstance().getCnx();
+//        tableUser.setItems(dataList);
+//        FilteredList<User> filteredData = new FilteredList<>(dataList, b -> true);  
+// filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+// filteredData.setPredicate(person -> {
+//    if (newValue == null || newValue.isEmpty()) {
+//     return true;
+//    }    
+//    String lowerCaseFilter = newValue.toLowerCase();
+//    
+//    if (person.getUsername().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+//     return true; // Filter matches Coach
+//    }else  
+//          return false; // Does not match.
+//   });
+//  });  
+//  SortedList<User> sortedData = new SortedList<>(filteredData);  
+//  sortedData.comparatorProperty().bind(tableUser.comparatorProperty());  
+//  tableUser.setItems(sortedData);      
+//    }
     
 }

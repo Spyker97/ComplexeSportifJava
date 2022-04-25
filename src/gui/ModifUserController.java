@@ -5,6 +5,8 @@
  */
 package gui;
 
+import complexesportifJava.entities.SessionClient;
+import complexesportifJava.entities.User;
 import complexesportifJava.services.UserService;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -54,11 +56,33 @@ public class ModifUserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+//     (ModifertextNom.setText(SessionClient.),ModifertextNom.setText(SessionClient.cin),ModifertextNom.setText(SessionClient.cin),ModifertextNom.setText(SessionClient.cin),ModifertextNom.setText(SessionClient.cin),ModifertextNom.setText(SessionClient.cin),ModifertextNom.setText(SessionClient.cin),ModifertextNom.setText(SessionClient.cin));
+    
+        
+        ModifertextCin.setText(SessionClient.cin+"");
+        ModifertextNom.setText(SessionClient.username+"");
+        ModifertextPrenom.setText(SessionClient.prenom+"");
+        Modiferemail.setText(SessionClient.email+"");
+        
+        Modiferpassword.setText(SessionClient.password+"");
+        Modiferadresse.setText(SessionClient.adresse+"");
+        
     }    
 
     @FXML
     private void ModiferClient(ActionEvent event) {
         UserService us = new UserService();
+        User u = new User();
+        u.setId(SessionClient.id);
+        u.setCin(Integer.parseInt(ModifertextCin.getText()));
+        u.setUsername(ModifertextNom.getText());
+        u.setPrenom(ModifertextPrenom.getText());
+        u.setEmail(Modiferemail.getText());
+        u.setPassword(Modiferpassword.getText());
+        u.setAdresse(Modiferadresse.getText());
+        
+        us.modifer(u, SessionClient.id);
+        
     }
     
 }

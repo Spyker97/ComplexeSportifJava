@@ -1,7 +1,10 @@
 
 package ComplexesportifJava.tools;
 
+import complexesportifJava.entities.User;
 import java.sql.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class MaConnexion {
     public final String  url ="jdbc:mysql://127.0.0.1:3306/ComplexeSportif";
@@ -29,6 +32,23 @@ public class MaConnexion {
     public Connection getCnx() {
         return cnx;
     }
+    
+//    public static ObservableList<User> getDataCours(){
+//        MaConnexion conn = MaConnexion.getInstance();
+//        ObservableList<User> list = FXCollections.observableArrayList();
+//        try {
+//            PreparedStatement ps = conn.prepareStatement("select * from user");
+//            ResultSet rs = ps.executeQuery();
+//            
+//            while (rs.next()){   
+//                list.add(new User(Integer.parseInt(rs.getString("cin")), rs.getString("nom"), rs.getString("prenom")));               
+//            }
+//        } catch (Exception e) {
+//        }
+//        return list;
+//    }
+
+    
     
     
 }

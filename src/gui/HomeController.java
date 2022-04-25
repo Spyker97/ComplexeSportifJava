@@ -5,6 +5,9 @@
  */
 package gui;
 
+import complexesportifJava.entities.SessionClient;
+import complexesportifJava.entities.User;
+import complexesportifJava.services.UserService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,11 +33,13 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        System.out.println(SessionClient.cin);
+        
     }    
 
     @FXML
     private void consilterProfil(ActionEvent event) throws IOException {
-        
         Parent root  = FXMLLoader.load(getClass().getResource("/gui/ModifUser.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
               Scene   scene = new Scene(root);
@@ -53,7 +58,10 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    private void logOut(ActionEvent event) throws IOException {
+    private void logOut(ActionEvent event) throws IOException { 
+        
+        SessionClient.cleanUserSession();
+        
     Parent root  = FXMLLoader.load(getClass().getResource("/gui/logiin.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
               Scene   scene = new Scene(root);

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FED700;">
          <children>
@@ -15,13 +15,20 @@
                   <Image url="@../img/complexesportif.png" />
                </image>
             </ImageView>
-            <Button layoutX="45.0" layoutY="188.0" mnemonicParsing="false" onAction="#consilterProfil" text="Consulter profil" />
-            <Button layoutX="52.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="les Terrains" />
-            <Button layoutX="52.0" layoutY="299.0" mnemonicParsing="false" text="Salle desport" />
-            <Button layoutX="57.0" layoutY="348.0" mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="85.0" text="LogOut" />
-            <Button layoutX="45.0" layoutY="221.0" mnemonicParsing="false" onAction="#listeUser" prefHeight="25.0" prefWidth="98.0" text="Liste User" />
+            <Button layoutX="45.0" layoutY="170.0" mnemonicParsing="false" onAction="#consilterProfil" text="Consulter profil" />
+            <Button layoutX="45.0" layoutY="242.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="123.0" text="les Terrains" />
+            <Button layoutX="45.0" layoutY="284.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="123.0" text="Salle desport" />
+            <Button layoutX="57.0" layoutY="330.0" mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="85.0" text="LogOut" />
+            <Button layoutX="45.0" layoutY="203.0" mnemonicParsing="false" onAction="#listeUser" prefHeight="31.0" prefWidth="123.0" text="Liste User" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="400.0" prefWidth="403.0" />
+      <AnchorPane prefHeight="400.0" prefWidth="614.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="606.0" layoutX="4.0" layoutY="21.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/278902666_603237570664995_8542607552918191204_n.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </children>
 </HBox>
