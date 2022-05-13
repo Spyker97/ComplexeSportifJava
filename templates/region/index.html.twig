@@ -1,0 +1,113 @@
+{% extends 'back_office/base.html.twig' %}
+
+{% block title %}Region index{% endblock %}
+
+{% block content %}
+<style>
+        .img{
+            width: 60px;
+            height: 60px;
+            background-size: cover;
+            display: block;
+            border-radius: 100px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+        }
+    </style>
+    <h1>Region index</h1>
+                <div>
+                    <div class="sidebar-search">
+
+                        <div class="input-group custom-search-form">
+
+                            <input type="text" id="search" class="form-control" placeholder="Search here">
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"> <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level" id="entitiesNav">
+                            </ul>
+                        </li>
+                        </div>
+
+
+ <script src="//code.jquery.com/jquery.js"></script>
+                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        jQuery(document).ready(function() {
+                            var searchRequest = null;
+                            $("#search").keyup(function() {
+                                var minlength = 1;
+                                var that = this;
+                                var value = $(this).val();
+                                var entitySelector = $("#entitiesNav").html('');
+                                if (value.length >= minlength ) {
+                                    if (searchRequest != null)
+                                        searchRequest.abort();
+                                    searchRequest = $.ajax({
+                                        type: "GET",
+                                        url: "{{ path('ajax_search') }}",
+                                        data: {
+                                            'q' : value
+                                        },
+                                        dataType: "text",
+                                        success: function(msg){
+                                            //we need to check if the value is the same
+                                            if (value===$(that).val()) {
+                                                var result = JSON.parse(msg);
+                                                $.each(result, function(key, arr) {
+                                                    $.each(arr, function(id, value) {
+                                                        if (key === 'regions') {
+                                                            if (id !== 'error') {
+                                                                entitySelector.append('<li><b>'+value[1]+'</b><a href="/region/showrech/'+id+'"><img src="/assets/img/'+value[0]+'" style="width: 60px; height: 60px"/></a></li>');
+                                                            } else {
+                                                                entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    </script>
+
+    <table class="table">
+       
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <a href="{{ path('app_region_new') }}" class="btn btn-success">Create new</a>
+        {% for region in regions %}
+            <tr>
+                <td>{{ region.id }}</td>
+                <td>{{ region.nom }}</td>
+                <td>{{ region.description }}</td>
+                <td><img  src="{{ asset("assets/img/") }}{{region.photo}}" alt="" class="img"></td>
+                <td>
+                    <a href="{{ path('app_region_show', {'id': region.id}) }}" class="btn btn-success">show</a>
+                    <a href="{{ path('app_region_edit', {'id': region.id}) }}" class="btn btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        
+        </tbody>
+    </table>
+    {{ knp_pagination_render(regions) }}
+    
+{% endblock %}

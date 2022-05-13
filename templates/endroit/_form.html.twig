@@ -1,0 +1,24 @@
+{{ form_start(form) }}
+    <fieldset>
+    {{ form_widget(form.nom,{'attr': {'class': 'form-control w-100 mt-2 mb-2','placeholder': 'nom'}})}}
+    </fieldset>
+    <fieldset>
+    {{ form_widget(form.type,{'attr': {'class': 'form-control w-100 mt-2 mb-2','placeholder': 'type'}})}}
+    </fieldset>
+    <fieldset>
+    {{ form_widget(form.description,{'attr': {'class': 'form-control w-100 mt-2 mb-2','placeholder': 'description'}})}}
+    </fieldset>
+    <fieldset>
+    {{ form_widget(form.longitude,{'attr': {'class': 'form-control w-100 mt-2 mb-2','placeholder': 'Longitude'}})}}
+    </fieldset>
+    <fieldset>
+    {{ form_widget(form.latitude,{'attr': {'class': 'form-control w-100 mt-2 mb-2','placeholder': 'Latitude'}})}}
+    </fieldset>
+    <fieldset>
+    {{ form_widget(form.numero,{'attr': {'class': 'form-control w-100 mt-2 mb-2','placeholder': 'Numero'}})}}
+    </fieldset>
+    <fieldset>
+    {{ form_widget(form.image,{'attr': {'class': 'form-control w-100 mt-2 mb-2','placeholder': 'image'}})}}
+    </fieldset>
+    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

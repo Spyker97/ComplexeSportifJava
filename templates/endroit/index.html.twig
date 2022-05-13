@@ -1,0 +1,80 @@
+{% extends 'back_office/base.html.twig' %}
+
+{% block title %}Endroit index{% endblock %}
+
+{% block content %}
+<style>
+        .img{
+            width: 60px;
+            height: 60px;
+            background-size: cover;
+            display: block;
+            border-radius: 100px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+        }
+    </style>
+    <h1>Endroit index</h1>
+    <br><br><br><br>
+    
+    <table class="table">
+        <tr>
+            <form method="" action="{{ path('endroit_search') }}">
+                <label>
+                    <input PLACEHOLDER="Search" type="text" name="data" class="form-control">
+                </label>
+                    <input type="submit" class="btn btn-success" value="FIND">
+            </form>
+        </tr>
+        <div>
+                                        <form class="form-inline my-2 my-lg-0" method="post" action="{{ path('endroit_tri') }}">
+                                            <label>
+                                                <select class="form-control" name="type">
+                                                    <option>Croissant</option>
+                                                    <option>Décroissant</option>
+                                                </select>
+                                            </label>
+                                            <input type="submit" class="btn btn-success" value="Trier!">
+                                        </form>
+                                    </div>
+        
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Numero</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <a href="{{ path('app_endroit_new') }}" class="btn btn-success">Create new</a>
+        {% for endroit in endroits %}
+            <tr>
+                <td>{{ endroit.id }}</td>
+                <td>{{ endroit.nom }}</td>
+                <td>{{ endroit.type }}</td>
+                <td>{{ endroit.description }}</td>
+                <td>{{ endroit.longitude }}</td>
+                <td>{{ endroit.latitude }}</td>
+                <td>{{ endroit.numero }}</td>
+                <td><img  src="{{ asset("assets/img/") }}{{endroit.image}}" alt="" class="img"></td>
+                <td>
+                    <a href="{{ path('app_endroit_show', {'id': endroit.id})  }}" class="btn btn-success">show</a>
+                    <a href="{{ path('app_endroit_edit', {'id': endroit.id}) }}" class="btn btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
