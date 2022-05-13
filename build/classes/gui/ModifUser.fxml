@@ -59,6 +59,7 @@
                </font>
             </RadioButton>
             <DatePicker fx:id="dateNaiss" layoutX="252.0" layoutY="261.0" />
+            <Button layoutX="423.0" layoutY="475.0" mnemonicParsing="false" onAction="#back" text="Back" />
          </children>
       </AnchorPane>
    </children>

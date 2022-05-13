@@ -3,31 +3,53 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/LogiinController.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/ResetController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/EventParticipants.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/test.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/EventsList.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/AddEvent.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/ReservationController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/Participant.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/EditEventController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/FRONTeventsController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/DeleteEvent.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/commande.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/Commande.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/TypeEventTable.fxml</file>
             <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/services/UserService.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/AfficherUserController.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/Avis.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/SessionClient.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/services/ReclamationService.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/Mail.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/terrain.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/Produit.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/CommandeController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/AddEventController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/styles.css</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/DeleteEventController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/EventParticipantsController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/services/EvenementCrud.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/commande.css</file>
             <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/ModifUserController.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/Home.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/TypeEvent.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/services/TypeEventCrud.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/services/ServiceCommande.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/EventsListController.java</file>
             <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/User.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/Reset.fxml</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/login1.fxml</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/LoginController.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/tools/MaConnexion.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/logiin.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/EditTypeEvent.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/reservation.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/AddTypeEventController.java</file>
             <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/ComplexeSportif.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/services/LoginService.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/produit.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/ReservationTerrainController.java</file>
             <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/GestionUserController.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/services/UserSession.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/Login1Controller.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/ForgotPassController.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/Reclamation.java</file>
-            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/ForgotPass.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/FRONTevents.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/EditEvent.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/ProduitController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/AddTypeEvent.fxml</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/services/ServiceProduit.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/TypeEventTableController.java</file>
             <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/HomeController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/Evenement.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/TestController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/gui/EditTypeEventController.java</file>
+            <file>file:/C:/Users/Ahmed/Desktop/ComplexeSportifJava/src/complexesportifJava/entities/reservation.java</file>
         </group>
     </open-files>
 </project-private>

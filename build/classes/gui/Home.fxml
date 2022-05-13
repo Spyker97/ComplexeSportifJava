@@ -6,25 +6,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FED700;">
+      <AnchorPane prefHeight="368.0" prefWidth="375.0" style="-fx-background-color: #FED700;">
          <children>
-            <ImageView fitHeight="128.0" fitWidth="175.0" layoutX="12.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="81.0" fitWidth="175.0" layoutX="36.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/complexesportif.png" />
                </image>
             </ImageView>
-            <Button layoutX="45.0" layoutY="170.0" mnemonicParsing="false" onAction="#consilterProfil" text="Consulter profil" />
-            <Button layoutX="45.0" layoutY="242.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="123.0" text="les Terrains" />
-            <Button layoutX="45.0" layoutY="284.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="123.0" text="Salle desport" />
-            <Button layoutX="57.0" layoutY="330.0" mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="85.0" text="LogOut" />
-            <Button layoutX="45.0" layoutY="203.0" mnemonicParsing="false" onAction="#listeUser" prefHeight="31.0" prefWidth="123.0" text="Liste User" />
+            <Button layoutX="181.0" layoutY="100.0" mnemonicParsing="false" onAction="#consilterProfil" prefHeight="31.0" prefWidth="99.0" text="Consulter profil" />
+            <Button layoutX="156.0" layoutY="217.0" mnemonicParsing="false" onAction="#Cours" prefHeight="31.0" prefWidth="123.0" text="Cours" />
+            <Button layoutX="156.0" layoutY="259.0" mnemonicParsing="false" onAction="#Abonnement" prefHeight="31.0" prefWidth="123.0" text="Abonnement" />
+            <Button layoutX="110.0" layoutY="468.0" mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="85.0" text="LogOut" />
+            <Button layoutX="3.0" layoutY="153.0" mnemonicParsing="false" onAction="#listeUser" prefHeight="31.0" prefWidth="123.0" text="Liste User" />
+            <Button layoutX="3.0" layoutY="100.0" mnemonicParsing="false" onAction="#listeTerrain" prefHeight="25.0" prefWidth="134.0" text="Liste terrain" />
+            <Button layoutX="156.0" layoutY="153.0" mnemonicParsing="false" onAction="#listeReservation" text="Liste de reservation" />
+            <Button layoutX="5.0" layoutY="217.0" mnemonicParsing="false" onAction="#listeAcademie" prefHeight="25.0" prefWidth="119.0" text="Academie" />
+            <Button layoutX="5.0" layoutY="259.0" mnemonicParsing="false" onAction="#listeEnfant" prefHeight="25.0" prefWidth="119.0" text="Enfant" />
+            <Button layoutX="14.0" layoutY="418.0" mnemonicParsing="false" onAction="#listeEvenement" text="Liste evenemnt" />
+            <Button layoutX="185.0" layoutY="344.0" mnemonicParsing="false" onAction="#listeCommande" text="commande" />
+            <Button layoutX="14.0" layoutY="344.0" mnemonicParsing="false" onAction="#listeProduit" text="Produit" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="400.0" prefWidth="614.0">
+      <AnchorPane prefHeight="368.0" prefWidth="687.0">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="606.0" layoutX="4.0" layoutY="21.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="646.0" fitWidth="567.0" layoutX="3.0" layoutY="112.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/278902666_603237570664995_8542607552918191204_n.jpg" />
                </image>

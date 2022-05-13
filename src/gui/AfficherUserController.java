@@ -11,6 +11,7 @@ import complexesportifJava.services.UserService;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import static java.util.Collections.list;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -71,6 +72,7 @@ public class AfficherUserController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         loadDate();
+        search();
     }    
     
      ObservableList<User>  ActList = FXCollections.observableArrayList();
@@ -79,7 +81,7 @@ public class AfficherUserController implements Initializable {
         
          ActList.addAll(us.afficherUser());
       
-         tableUser.setItems(ActList);
+         tableUser.setItems(ActList); 
        
     }
       
@@ -99,10 +101,11 @@ public class AfficherUserController implements Initializable {
 
     @FXML
     private void Delete(ActionEvent event) {
+        loadDate();
          UserService us = new UserService();
             User a = tableUser.getSelectionModel().getSelectedItem();
             us.supprimer(a.getCin());
-            loadDate();
+            
     }
 
     @FXML
@@ -114,14 +117,16 @@ public class AfficherUserController implements Initializable {
                  stage.show();
     }
     
+//    @FXML
 //    void search_user() {          
 //        CCin.setCellValueFactory(new PropertyValueFactory<>("cin"));
-//        CNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+//        CNom.setCellValueFactory(new PropertyValueFactory<>("username"));
+//        CPrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
 //        
-//        
+//         UserService us = new UserService();
 //     
 //        
-//        dataList = MaConnexion.getInstance().getCnx();
+//        dataList = (ObservableList<User>) us.searchUser();
 //        tableUser.setItems(dataList);
 //        FilteredList<User> filteredData = new FilteredList<>(dataList, b -> true);  
 // filterField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -141,5 +146,33 @@ public class AfficherUserController implements Initializable {
 //  sortedData.comparatorProperty().bind(tableUser.comparatorProperty());  
 //  tableUser.setItems(sortedData);      
 //    }
+    
+    private void search(){
+        UserService s = new UserService();
+        ObservableList<User> listUser = FXCollections.observableArrayList(s.searchUser());
+        FilteredList<User> filteredData = new FilteredList<>(listUser,p -> true);
+
+    filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+        filteredData.setPredicate(user ->{
+            if(newValue == null || newValue.isEmpty()){
+                return true;
+            }
+
+            String lowerCaseFilter = newValue.toLowerCase();
+            if(String.valueOf(user.getCin()).toLowerCase().contains(lowerCaseFilter)){
+                return true;
+            }else if(user.getUsername().toLowerCase().contains(lowerCaseFilter)){
+                return true; 
+            }else if(user.getPrenom().toLowerCase().contains(lowerCaseFilter)){
+                return true; 
+            }
+            return false;
+        });
+    });
+
+        SortedList<User> sortedData = new SortedList<>(filteredData);
+
+    tableUser.setItems(sortedData);
+    }
     
 }

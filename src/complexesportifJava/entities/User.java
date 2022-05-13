@@ -56,6 +56,17 @@ public class User {
         this.adresse = adresse;
         this.date_naissance = date_naissance;
     }
+    
+    public User(int cin, String username, String prenom, String genre, String email,String adresse, String date_naissance) {
+        this.cin = cin;
+        this.username = username;
+        this.prenom = prenom;
+        this.genre = genre;
+        this.email = email;
+        
+        this.adresse = adresse;
+        this.date_naissance = date_naissance;
+    }
 
      public User(int cin, String username, String prenom, String email, String password, String adresse) {
         this.cin = cin;

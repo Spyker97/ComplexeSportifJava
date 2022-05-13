@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddEventController">
+   <children>
+      <HBox layoutX="211.0" layoutY="86.0" prefHeight="76.0" prefWidth="1155.0" styleClass="modal" stylesheets="@styles.css">
+         <children>
+            <Label prefHeight="35.0" prefWidth="242.0" styleClass="title-modal-label" stylesheets="@../../../../../../../../Users/Oumaima/Documents/NetBeansProjects/TunTrips/src/com/TunTripsPI/Gui/styles.css" text="Ajouter un événement">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" top="25.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <VBox prefHeight="778.0" prefWidth="211.0" styleClass="vbox" stylesheets="@styles.css">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" styleClass="btn-vbox" stylesheets="@styles.css" text="Acceuil" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnGestEvent" mnemonicParsing="false" onAction="#listDesRegions" prefHeight="54.0" prefWidth="206.0" styleClass="btn-vbox" stylesheets="@styles.css" text="Gestion Événement" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="90.0" />
+         </padding>
+      </VBox>
+      <Label layoutX="247.0" layoutY="201.0" text="Titre" />
+      <Label layoutX="247.0" layoutY="460.0" text="Description" />
+      <TextField fx:id="tfTitreEve" layoutX="247.0" layoutY="227.0" prefHeight="27.0" prefWidth="430.0" styleClass="txt-field" stylesheets="@styles.css" />
+      <Button fx:id="btnAjouter" layoutX="568.0" layoutY="635.0" mnemonicParsing="false" onAction="#AjouterEve" prefHeight="26.0" prefWidth="114.0" styleClass="btn" stylesheets="@styles.css" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="tfDescription" layoutX="245.0" layoutY="486.0" prefHeight="127.0" prefWidth="430.0" styleClass="txt-field" stylesheets="@styles.css" wrapText="true" />
+      <Button fx:id="btnannuler" layoutX="462.0" layoutY="635.0" mnemonicParsing="false" onAction="#annuler" prefHeight="27.0" prefWidth="97.0" styleClass="trans-btn-blue-border" stylesheets="@styles.css" text="Annuler" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="247.0" layoutY="269.0" prefHeight="18.0" prefWidth="51.0" text="Début " />
+      <Label layoutX="247.0" layoutY="328.0" prefHeight="18.0" prefWidth="51.0" text="Fin " />
+      <Label layoutX="245.0" layoutY="389.0" prefHeight="18.0" prefWidth="135.0" text="Nombre participant" />
+      <DatePicker fx:id="datedebut" layoutX="247.0" layoutY="294.0" prefHeight="26.0" prefWidth="430.0" styleClass="txt-field" stylesheets="@styles.css" />
+      <DatePicker fx:id="datefin" layoutX="247.0" layoutY="355.0" prefHeight="26.0" prefWidth="430.0" styleClass="txt-field" stylesheets="@styles.css" />
+      <TextField fx:id="nbr" layoutX="245.0" layoutY="422.0" prefHeight="27.0" prefWidth="430.0" styleClass="txt-field" stylesheets="@styles.css" />
+      <TextField fx:id="txtregionid" layoutX="576.0" layoutY="188.0" prefHeight="26.0" prefWidth="97.0" visible="false" />
+   </children>
+</AnchorPane>

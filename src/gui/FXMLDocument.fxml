@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLDocumentController">
+   <children>
+      <AnchorPane layoutY="6.0" prefHeight="543.0" prefWidth="228.0" style="-fx-background-color: #755b5b;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="27.0" layoutY="416.0" mnemonicParsing="false" onAction="#Add_users" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: green;" text="Add" textFill="RED" />
+            <TextField fx:id="txt_username" layoutX="23.0" layoutY="157.0" onKeyReleased="#search_user" prefHeight="30.0" prefWidth="180.0" promptText="Username" />
+            <TextField fx:id="txt_Number" layoutX="23.0" layoutY="207.0" prefHeight="30.0" prefWidth="180.0" promptText="Number" />
+            <TextField fx:id="txt_email" layoutX="23.0" layoutY="256.0" prefHeight="30.0" prefWidth="180.0" promptText="email" />
+            <TextField fx:id="txt_type" layoutX="23.0" layoutY="304.0" prefHeight="30.0" prefWidth="180.0" promptText="type" />
+            <ImageView fitHeight="145.0" fitWidth="110.0" layoutX="55.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/registration.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table_users" layoutX="237.0" layoutY="86.0" onMouseClicked="#getSelected" prefHeight="324.0" prefWidth="454.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="75.0" />
+          <TableColumn fx:id="col_username" prefWidth="75.0" text="Username" />
+            <TableColumn fx:id="col_Number" prefWidth="92.0" text="Number" />
+            <TableColumn fx:id="col_email" prefWidth="97.0" text="Email" />
+            <TableColumn fx:id="col_type" prefWidth="115.0" text="Type" />
+        </columns>
+      </TableView>
+      <TextField fx:id="filterField" layoutX="537.0" layoutY="44.0" promptText="Search" />
+      <Button layoutX="356.0" layoutY="452.0" mnemonicParsing="false" onAction="#Edit" prefHeight="40.0" prefWidth="102.0" style="-fx-background-color: Orange;" text="Update" />
+      <Button layoutX="493.0" layoutY="452.0" mnemonicParsing="false" onAction="#Delete" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" />
+      <Button fx:id="btnPDF" layoutX="627.0" layoutY="505.0" mnemonicParsing="false" onAction="#pdf" text="PDF" />
+   </children>
+</AnchorPane>

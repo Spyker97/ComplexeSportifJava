@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EventParticipantsController">
+   <children>
+      <HBox layoutX="211.0" layoutY="86.0" prefHeight="76.0" prefWidth="1155.0" styleClass="modal" stylesheets="@styles.css">
+         <children>
+            <Label fx:id="txteventnom" prefHeight="35.0" prefWidth="242.0" styleClass="title-modal-label" stylesheets="@../../../../../../../../Users/Oumaima/Documents/NetBeansProjects/TunTrips/src/com/TunTripsPI/Gui/styles.css">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" top="25.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <VBox prefHeight="778.0" prefWidth="211.0" styleClass="vbox" stylesheets="@styles.css">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" styleClass="btn-vbox" stylesheets="@styles.css" text="Acceuil" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnGestEvent" mnemonicParsing="false" onAction="#listDesRegions" prefHeight="54.0" prefWidth="206.0" styleClass="btn-vbox" stylesheets="@styles.css" text="Événements" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="90.0" />
+         </padding>
+      </VBox>
+      <Label fx:id="txteventnom1" layoutX="240.0" layoutY="204.0" prefHeight="35.0" prefWidth="134.0" styleClass="title-modal-label" stylesheets="@../../../../../../../../Users/Oumaima/Documents/NetBeansProjects/TunTrips/src/com/TunTripsPI/Gui/styles.css" text="Participants :">
+         <font>
+            <Font name="Calibri" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableparticipants" layoutX="393.0" layoutY="204.0" prefHeight="544.0" prefWidth="242.0" stylesheets="@styles.css">
+        <columns>
+          <TableColumn fx:id="cl_nom" prefWidth="241.60001220703126" />
+        </columns>
+      </TableView>
+      <TextField fx:id="eveid" layoutX="714.0" layoutY="191.0" visible="false" />
+   </children>
+</AnchorPane>

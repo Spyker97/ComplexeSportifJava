@@ -2,6 +2,9 @@
 package ComplexesportifJava.tools;
 
 import complexesportifJava.entities.User;
+import gui.Cours;
+
+import gui.users;
 import java.sql.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -37,7 +40,7 @@ public class MaConnexion {
 //        MaConnexion conn = MaConnexion.getInstance();
 //        ObservableList<User> list = FXCollections.observableArrayList();
 //        try {
-//            PreparedStatement ps = conn.prepareStatement("select * from user");
+//            PreparedStatement ps = conn.prepareStatement("select * from users");
 //            ResultSet rs = ps.executeQuery();
 //            
 //            while (rs.next()){   
@@ -50,5 +53,38 @@ public class MaConnexion {
 
     
     
-    
+    public static ObservableList<users> getDatausers(){
+        Connection conn = MaConnexion.getInstance().getCnx();
+        ObservableList<users> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from users");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){   
+                list.add(new users(Integer.parseInt(rs.getString("user_id")), rs.getString("username"), rs.getString("Number"), rs.getString("email"),rs.getString("type")));               
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+
+       public static ObservableList<Cours> getDataCours(){
+        Connection conn = MaConnexion.getInstance().getCnx();
+        ObservableList<Cours> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from Cour");
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){   
+                list.add(new Cours(Integer.parseInt(rs.getString("id")),rs.getString("Coach"), rs.getString("Num_salle"),rs.getString("type")));               
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
+       
+
+
 }

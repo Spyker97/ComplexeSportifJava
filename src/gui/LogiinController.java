@@ -18,6 +18,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -124,53 +126,65 @@ public class LogiinController implements Initializable {
      
      
     @FXML
-    private void buttonLogin(ActionEvent event) throws IOException {
-         //login here
-         Window owner = loginButton.getScene().getWindow();
-
+    private void buttonLogin(ActionEvent event) throws IOException, NoSuchAlgorithmException {
+    try {
+        //login here
+        Window owner = loginButton.getScene().getWindow();
+        
         System.out.println(tt_email.getText());
         System.out.println(tt_password.getText());
 
         if (tt_email.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                "Please enter your email id");
+                    "Please enter your email id");
             return;
         }
         if (tt_password.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                "Please enter a password");
+                    "Please enter a password");
             return;
         }
 
         String emailId = tt_email.getText();
+        
         String password = tt_password.getText();
-
-
+        
+        
         UserService retUser = new UserService();
         boolean flag = retUser.afficherUserLogin(emailId, password);
+        User user = new User();
+        UserService userService = new UserService();
+        user.setEmail(tt_email.getText());
+        user.setPassword(tt_password.getText());
+        User u = userService.rechercherParEmail(user);
+        MessageDigest msg = MessageDigest.getInstance("MD5");
+        byte[] hash = msg.digest(tt_password.getText().getBytes(StandardCharsets.UTF_8));
+        // convertir bytes en hexadécimal
+        StringBuilder s = new StringBuilder();
+        for (byte b : hash) {
+            s.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
+        }
         
-        if (!flag) {
+        if (tt_email.getText().equals(u.getEmail()) && s.toString().equals(u.getPassword())) {
             infoBox("Please enter correct Email and Password", null, "Failed");
         } else {
             
             infoBox("Login Successful!", null, "Failed");
             
-            
-            
             User userSession = retUser.afficherUserSession(emailId, password);
-                SessionClient.id=userSession.getId();
-                SessionClient.cin=userSession.getCin();
-                SessionClient.username=userSession.getUsername();
-                SessionClient.prenom=userSession.getPrenom();
-                SessionClient.genre=userSession.getGenre();
-                SessionClient.email=userSession.getEmail();
-                SessionClient.password=userSession.getPassword();
-                SessionClient.date_naissance=userSession.getDate_naissance();
-                SessionClient.adresse=userSession.getAdresse();
+            SessionClient.id=userSession.getId();
+            SessionClient.cin=userSession.getCin();
+            SessionClient.username=userSession.getUsername();
+            SessionClient.prenom=userSession.getPrenom();
+            SessionClient.genre=userSession.getGenre();
+            SessionClient.email=userSession.getEmail();
+            SessionClient.password=userSession.getPassword();
+            SessionClient.date_naissance=userSession.getDate_naissance();
+            SessionClient.adresse=userSession.getAdresse();
             
             if(rememberMe.isSelected()){
-               userSession.setRememberMe(1);
-               retUser.modifToRemember(userSession, userSession.getId());
+                userSession.setRememberMe(1);
+                retUser.modifToRemember(userSession, userSession.getId());
             }else{
                 userSession.setRememberMe(0);
                 retUser.modifToRemember(userSession, userSession.getId());
@@ -178,10 +192,13 @@ public class LogiinController implements Initializable {
             System.out.println(userSession); 
             Parent root  = FXMLLoader.load(getClass().getResource("/gui/Home.fxml"));
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-              Scene   scene = new Scene(root);
-                 stage.setScene(scene);
-                 stage.show();
+            Scene   scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         }
+    } catch (NoSuchAlgorithmException ex) {
+        Logger.getLogger(LogiinController.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }
     
     

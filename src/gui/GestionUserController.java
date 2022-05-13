@@ -9,8 +9,13 @@ import complexesportifJava.entities.User;
 import complexesportifJava.services.UserService;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
@@ -85,9 +90,21 @@ public class GestionUserController implements Initializable {
             
             
         if(ValidCin(textCin)&&Validchamp(textNom)&&Validchamp(textPrenom)&&Validchamp(email)&&Validchamp(password)&&Validchamp(adresse)&&ValidEmail(email.getText())){
-            
-        User u = new User(Integer.parseInt(textCin.getText()), textNom.getText(),textPrenom.getText(), c ,email.getText(),password.getText(),adresse.getText(),dateNaiss.getValue().toString());
-        us.ajouterUser(u);
+            try {
+                MessageDigest msg = MessageDigest.getInstance("MD5");
+                byte[] hash = msg.digest(password.getText().getBytes(StandardCharsets.UTF_8));
+                // convertir bytes en hexadécimal
+                StringBuilder s = new StringBuilder();
+                for (byte b : hash) {
+                    s.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
+                }
+               
+                User u = new User(Integer.parseInt(textCin.getText()), textNom.getText(),textPrenom.getText(), c ,email.getText(),
+                        s.toString(),adresse.getText(),dateNaiss.getValue().toString());
+                us.ajouterUser(u);
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(GestionUserController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
     }

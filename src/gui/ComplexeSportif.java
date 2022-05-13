@@ -36,6 +36,7 @@ public class ComplexeSportif extends Application {
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.UTILITY);
             primaryStage.show();
+            
 //            Mail.send(
 //    "ahmedbhd1997@gmail.com",
 //    "Sej+^e3hzB@7cd(saddi",

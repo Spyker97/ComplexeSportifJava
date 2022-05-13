@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CommandeController">
+    <stylesheets>
+        <URL value="@commande.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tb_com" layoutX="390.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="357.0">
+         <columns>
+            <TableColumn fx:id="tb_adresse" prefWidth="87.0" text="adresse" />
+            <TableColumn fx:id="tb_payement" prefWidth="87.0" text="payement" />
+            <TableColumn fx:id="tb_produits" prefWidth="77.60003662109375" text="produits" />
+         </columns>
+         <columnResizePolicy>
+           
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="adresse" layoutX="218.0" layoutY="155.0" prefHeight="26.0" prefWidth="147.0" />
+      <TextField fx:id="payement" layoutX="218.0" layoutY="210.0" prefHeight="42.0" prefWidth="147.0" />
+      <TextField fx:id="produits" layoutX="218.0" layoutY="270.0" prefHeight="26.0" prefWidth="147.0" />
+      <Label layoutX="42.0" layoutY="156.0" text="adresse" textFill="#1533c9">
+         <font>
+            <Font name="Algerian" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="211.0" text="payement" textFill="#1533c9">
+         <font>
+            <Font name="Algerian" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="271.0" text="produits" textFill="#1633c7">
+         <font>
+            <Font name="Algerian" size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="ajouter_com" layoutX="27.0" layoutY="342.0" mnemonicParsing="false" onAction="#ajouter_com" prefHeight="42.0" prefWidth="90.0" text="ajouter" textFill="#1533c9">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifier_com" layoutX="152.0" layoutY="342.0" mnemonicParsing="false" onAction="#modifier_com" prefHeight="42.0" prefWidth="98.0" text="modifier" textFill="#1533c9">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="supp_com" layoutX="288.0" layoutY="342.0" mnemonicParsing="false" onAction="#supp_com" prefHeight="42.0" prefWidth="90.0" text="supprimer" textFill="#1533c9">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FRONTeventsController">
+   <children>
+      <HBox layoutX="211.0" layoutY="86.0" prefHeight="76.0" prefWidth="1155.0" styleClass="modal" stylesheets="@styles.css">
+         <children>
+            <Label prefHeight="35.0" prefWidth="242.0" styleClass="title-modal-label" stylesheets="@../../../../../../../../Users/Oumaima/Documents/NetBeansProjects/TunTrips/src/com/TunTripsPI/Gui/styles.css" text="Liste des événements">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" top="25.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <VBox prefHeight="778.0" prefWidth="211.0" styleClass="vbox" stylesheets="@styles.css">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" styleClass="btn-vbox" stylesheets="@styles.css" text="Acceuil" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnGestEvent" mnemonicParsing="false" onAction="#listDesEvenements" prefHeight="54.0" prefWidth="206.0" styleClass="btn-vbox" stylesheets="@styles.css" text=" Événements" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="90.0" />
+         </padding>
+      </VBox>
+      <TableView fx:id="event_table" layoutX="259.0" layoutY="323.0" prefHeight="434.0" prefWidth="1076.0" stylesheets="@styles.css">
+         <columns>
+            <TableColumn fx:id="cl_id" minWidth="0.0" prefWidth="56.0" text="ID" visible="false" />
+            <TableColumn fx:id="cl_nom" prefWidth="175.20001220703125" text="EVENEMENT" />
+            <TableColumn fx:id="cl_desc" prefWidth="438.3999938964844" text="DESCRIPTION" />
+            <TableColumn fx:id="cl_dateS" minWidth="0.0" prefWidth="145.5999755859375" text="DATE DE DEBUT" />
+            <TableColumn fx:id="cl_dateE" prefWidth="141.60003662109375" text="DATE FIN" />
+            <TableColumn fx:id="cl_action" maxWidth="643.9999389648438" prefWidth="174.400146484375" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtuserid" layoutX="445.0" layoutY="213.0" prefHeight="26.0" prefWidth="49.0" visible="false" />
+   </children>
+</AnchorPane>

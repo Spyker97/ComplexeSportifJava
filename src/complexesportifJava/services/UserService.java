@@ -13,6 +13,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
 public class UserService {
@@ -31,14 +33,14 @@ public void ajouterUser(User u){
             
             ste.setString(3, u.getPrenom());
             ste.setString(4, u.getGenre());
-            
+           
             ste.setString(5, u.getEmail());
             //ste.setDate(2, (Date) u.getBirth_date());
             ste.setString(6, u.getPassword());
             ste.setString(7, u.getAdresse());
             ste.setString(8, u.getDate_naissance());
-            String ROLE_USER = "ROLE_USER";
-            ste.setString(9,"["+ROLE_USER+"]");
+            String ROLE_USER = "["+ "ROLE_USER" + "]";
+            ste.setString(9, ROLE_USER);
             ste.executeUpdate();
             System.out.println("Utilisateur Ajoutée!!");
         } catch (SQLException ex) {
@@ -72,6 +74,60 @@ public List<User> afficherUser(){
     return user;
 }
 
+public User rechercherParEmail(User t) {
+
+        List<User> users = new ArrayList<>();
+        String sql = "SELECT id,cin,username,prenom,genre,date_naissance,email,password,adresse FROM user WHERE email=? ";
+        try {
+            PreparedStatement ps = cnx.prepareStatement(sql);
+            ps.setString(1, t.getEmail());
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                t.setId(rs.getInt(1));
+                t.setCin(rs.getInt(2));
+                t.setUsername(rs.getString(3));
+                t.setPrenom(rs.getString(4));
+                t.setGenre(rs.getString(5));
+                t.setDate_naissance(rs.getString(6));
+                t.setEmail(rs.getString(7));
+                t.setPassword(rs.getString(8));
+                t.setAdresse(rs.getString(8));
+                
+                
+                users.add(t);
+                System.out.println(t.toString());
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return t;
+    }
+
+ public List<User> searchUser(){
+    List<User> user = new ArrayList<>();
+    String sql = "select * from user";
+        try {
+           Statement ste = cnx.createStatement();
+            ResultSet rs = ste.executeQuery(sql);
+            while(rs.next()){
+                User u = new User();
+                u.setId(rs.getInt("id"));
+                u.setCin(rs.getInt("cin"));
+                u.setUsername(rs.getString("username"));
+                u.setPrenom(rs.getString("prenom"));
+                u.setAdresse(rs.getString("adresse"));
+                u.setEmail(rs.getString("email"));
+                u.setPassword(rs.getString("password"));
+                u.setGenre(rs.getString("genre"));
+                u.setDate_naissance(rs.getString("date_naissance"));
+                user.add(u);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    return user;
+}
 
 public Boolean afficherUserLogin(String emailId, String password){
     User user = new User();
